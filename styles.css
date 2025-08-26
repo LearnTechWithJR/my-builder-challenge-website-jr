@@ -1,0 +1,758 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Amazon Ember', 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: #f5f5f5;   /* light text */
+    /* Background image + fallback color */
+  background: 
+    url('cybersec.jpg') no-repeat center center fixed,
+    #0f172a; /* fallback dark navy */
+  background-size: cover;  /* makes the image cover entire viewport */
+  
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 99, 132, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(54, 162, 235, 0.08) 0%, transparent 50%);
+    z-index: -1;
+}
+
+.aws-link {
+    background: #ff9900; /* AWS orange */
+    color: #ffffff;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.2s ease;
+    margin-top: 2rem;
+    display: inline-block;
+    border: none;
+}
+
+.aws-link:hover {
+    background: #e68a00; /* darker orange */
+    transform: translateY(-1px);
+}
+
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    position: relative;
+}
+
+/* HERO SECTION */
+.hero {
+    background: #1e293b; /* dark slate background */
+    border-radius: 8px;
+    padding: 60px 40px;
+    margin-bottom: 40px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    position: relative;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, rgb(104, 85, 255) 0%, rgb(187, 66, 241) 50%, rgb(255, 0, 128) 100%);
+    border-radius: 8px;
+    opacity: 0.85;
+}
+
+.hero h1 {
+    color: #ffffff;
+    font-size: 48px;
+    font-weight: 700;
+    margin: 20px 0 8px 0;
+    letter-spacing: -0.02em;
+}
+
+.tagline {
+    font-size: 18px;
+    color: #ffffff; /* soft white-gray */
+    margin-bottom: 16px;
+    font-weight: 400;
+}
+
+.profile-photo {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #ff9900; /* AWS orange ring */
+    margin: 0 auto 20px auto;
+    display: block;
+}
+
+/* FUN FACTS */
+.fun-facts {
+    background: #1e293b; /* Dark slate background */
+    border-radius: 8px;
+    padding: 40px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    position: relative;
+}
+
+.fun-facts::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 40px;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, rgb(104, 85, 255) 0%, rgb(187, 66, 241) 50%, rgb(255, 0, 128) 100%);; /* AWS orange gradient */
+    border-radius: 6px;
+    opacity: 0.9;
+}
+
+.fun-facts h3 {
+    text-align: left;
+    color: #ffffff; /* white heading */
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 32px;
+    letter-spacing: -0.02em;
+}
+
+
+/* PROFESSIONAL BACKGROUND */
+.professional-background {
+    background: #1e293b; /* dark slate like fun-facts */
+    border-radius: 8px;
+    padding: 40px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    position: relative;
+}
+
+.professional-background::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 40px;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #2600E6 0%, #ff00cc 100%); /* blue-purple gradient */
+    border-radius: 6px;
+    opacity: 0.9;
+}
+
+.professional-background h3 {
+    text-align: left;
+    color: #ffffff;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 32px;
+    letter-spacing: -0.02em;
+}
+
+
+.background-summary {
+    background: #1e293b;
+    color: #e2e8f0;
+    padding: 30px;
+    border-radius: 8px;
+    font-size: 16px;
+    line-height: 1.6;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    border-left: 4px solid #ff9900; /* AWS orange accent */
+    text-align: justify;
+}
+
+
+
+
+/* FACT CARDS */
+.fact-card {
+    background: #0f172a; /* darker card inside */
+    border: 1px solid #334155;
+    padding: 24px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.fact-card::before {
+    content: '';
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(135deg, rgb(104, 85, 255) 0%, rgb(187, 66, 241) 50%, rgb(255, 0, 128) 100%);;
+    border-radius: 4px;
+    opacity: 0.8;
+}
+
+.fact-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(255, 153, 0, 0.3); /* subtle orange glow */
+}
+
+.fact-card h4 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #ffffff; /* white for headings */
+}
+
+.fact-card p {
+    color: #94a3b8; /* muted gray text */
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.fact-card a {
+    color: #ff9900; /* AWS orange link */
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.fact-card a:hover {
+    color: #e68a00;
+    text-decoration: underline;
+}
+
+
+/* AWS JOURNEY */
+.aws-journey {
+    background: #1e293b; /* dark slate background */
+    border-radius: 8px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    position: relative;
+}
+
+.aws-journey::after {
+    content: '';
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, rgb(104, 85, 255) 0%, rgb(187, 66, 241) 50%, rgb(255, 0, 128) 100%); /* AWS orange highlight */
+    border-radius: 6px;
+    opacity: 0.9;
+}
+
+.aws-journey h3 {
+    color: #ffffff; /* white heading */
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+}
+
+.aws-journey p {
+    font-size: 16px;
+    color: #94a3b8; /* muted gray for readability */
+    margin-bottom: 32px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.6;
+}
+
+
+/* CTA BUTTONS */
+.cta-button {
+    display: inline-block;
+    background: #ff9900; /* AWS orange */
+    color: #ffffff;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.2s ease;
+}
+
+.cta-button:hover {
+    background: #e68a00;
+    transform: translateY(-1px);
+}
+
+
+/* CONTACT FORM STYLES - Added for contact form functionality */
+.contact-form {
+    background: black;
+    border-radius: 8px;
+    padding: 40px;
+    margin-top: 40px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    position: relative;
+}
+
+/* Contact form decorative element */
+.contact-form::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    right: 40px;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, rgb(104, 85, 255) 0%, rgb(187, 66, 241) 50%, rgb(255, 0, 128) 100%); /* AWS orange gradient */
+    border-radius: 6px;
+    opacity: 0.9;
+}
+
+.contact-form {
+    background: #1e293b; /* Dark slate background */
+    border-radius: 8px;
+    padding: 40px;
+    margin-top: 40px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    position: relative;
+}
+
+/* Contact form heading */
+.contact-form h3 {
+    color: #ffffff;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+    text-align: center;
+}
+
+/* Contact form subtext */
+.contact-form > p {
+    font-size: 16px;
+    color: #e2e8f0;
+    margin-bottom: 32px;
+    text-align: center;
+    line-height: 1.6;
+}
+
+/* Form message styles for success/error notifications */
+.form-message.success {
+    background: #fff7ed;
+    color: #9a3412;
+    border: 1px solid #fdba74;
+}
+
+.form-message.error {
+    background: #fef2f2;
+    color: #dc2626;
+    border: 1px solid #fecaca;
+}
+
+/* Labels */
+.form-group label {
+    display: block;
+    font-weight: 600;
+    color: #f1f5f9;
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+/* Inputs & textarea */
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #334155;
+    border-radius: 6px;
+    font-size: 16px;
+    font-family: inherit;
+    background: #0f172a;
+    color: #f8fafc;
+    transition: all 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #ff9900; /* AWS orange focus */
+    background: #1e293b;
+    box-shadow: 0 0 0 3px rgba(255, 153, 0, 0.3);
+}
+
+/* Submit button */
+.contact-submit-btn {
+    background: #ff9900; /* AWS orange */
+    color: #ffffff;
+    padding: 12px 32px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: block;
+    margin: 0 auto;
+}
+
+.contact-submit-btn:hover {
+    background: #e68a00; /* Darker AWS orange */
+    transform: translateY(-1px);
+}
+
+/* END CONTACT FORM STYLES */
+
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    background: #0f172a; /* AWS dark navy */
+    color: #94a3b8; /* muted gray for professional tone */
+    font-size: 14px;
+    border-top: 1px solid #1e293b; /* subtle divider */
+}
+
+footer {
+    text-align: center;
+    padding: 30px 20px;
+    background: #0f172a; /* dark navy */
+    color: #94a3b8; /* muted slate */
+    font-size: 14px;
+    border-top: 1px solid #1e293b;
+    position: relative;
+}
+
+/* Add a subtle AWS orange glow line */
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, #ff9900, #ff00cc, #2600E6); /* AWS orange to purple/blue */
+    border-radius: 3px;
+    box-shadow: 0 0 12px rgba(255, 153, 0, 0.6);
+}
+
+/* Footer links */
+footer a {
+    color: #ff9900; /* AWS orange */
+    text-decoration: none;
+    font-weight: 500;
+    margin: 0 5px;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #e68a00; /* darker orange */
+    text-decoration: underline;
+}
+
+/* Emoji glow */
+footer .heart {
+    color: #ff4d6d;
+    text-shadow: 0 0 6px rgba(255, 77, 109, 0.8);
+}
+
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .tagline {
+        font-size: 16px;
+    }
+
+    .profile-photo {
+        width: 100px;
+        height: 100px;
+    }
+
+    main {
+        padding: 20px;
+    }
+
+    .hero, .fun-facts, .aws-journey {
+        padding: 24px;
+    }
+
+    /* Contact form mobile styles */
+    .contact-form {
+        padding: 24px;
+    }
+
+    .fun-facts h3, .aws-journey h3 {
+        font-size: 24px;
+    }
+
+    /* Contact form mobile heading */
+    .contact-form h3 {
+        font-size: 24px;
+    }
+}
+
+/* Smooth scroll for in-page links */
+html { scroll-behavior: smooth; }
+
+/* Top navigation (AWS-flavored) */
+.site-nav {
+  position: sticky; top: 0; z-index: 1000;
+  background: #0f172a;
+  border-bottom: 1px solid #1e293b;
+  box-shadow: 0 2px 8px rgba(0,0,0,.25);
+}
+.site-nav nav {
+  max-width: 1200px; margin: 0 auto; padding: 12px 20px;
+  display: flex; gap: 18px; align-items: center; flex-wrap: wrap;
+}
+.site-nav a {
+  color: #e2e8f0; text-decoration: none; font-weight: 600; font-size: 14px;
+  padding: 8px 10px; border-radius: 6px;
+  transition: color .2s ease, background .2s ease, box-shadow .2s ease;
+}
+.site-nav a:hover { color: #fff; background: rgba(255,153,0,.08); }
+.site-nav a:last-child { color: #ff9900; }
+.site-nav a:last-child:hover { color: #e68a00; }
+
+/* Give sections some top offset so anchors don't hide under sticky nav */
+section { scroll-margin-top: 80px; }
+
+/* Optional: show which menu item is active while scrolling */
+.menu-active { color:#ff9900 !important; }
+
+
+/* CERTIFICATIONS SECTION */
+.certifications {
+  margin: 60px auto;   /* top & bottom spacing */
+  text-align: center;
+  max-width: 1200px;   /* keeps it centered nicely */
+  padding: 0 20px;     /* adds side padding */
+}
+
+.certifications h3 {
+  color: #ffffff;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 32px; /* consistent space below heading */
+  letter-spacing: -0.02em;
+}
+
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;  /* uniform spacing between cards */
+  justify-items: center;
+}
+
+.cert-card {
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 12px;
+  padding: 24px;
+  text-align: center;
+  text-decoration: none;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.35);
+
+  /* fixed size for consistency */
+  width: 100%;
+  max-width: 300px;
+  min-height: 230px;  /* keeps all boxes equal */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cert-card img {
+  width: 120px;        /* fixed width */
+  height: 120px;       /* fixed height */
+  object-fit: contain; /* keeps aspect ratio inside box */
+  margin-bottom: 16px; /* spacing below the logo */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.cert-card p {
+  color: #f8fafc;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.35;
+  margin: 10px 0;
+}
+
+.cert-date {
+  display: none !important;
+}
+
+
+/* Provider accent glows (subtle + professional) */
+.cert-card.aws:hover     { box-shadow: 0 10px 22px rgba(255,153,0,.28); }
+.cert-card.cisco:hover   { box-shadow: 0 10px 22px rgba(0,121,193,.28); }   /* Cisco blue */
+.cert-card.ccna:hover    { box-shadow: 0 10px 22px rgba(0,121,193,.28); }   /* same as Cisco */
+.cert-card.comptia:hover { box-shadow: 0 10px 22px rgba(206,17,38,.28); }   /* CompTIA red */
+.cert-card.vmware:hover  { box-shadow: 0 10px 22px rgba(0,182,122,.28); }   /* VMware green */
+.cert-card.mcsa:hover    { box-shadow: 0 10px 22px rgba(0,121,193,.28); }   /* same as Cisco */
+
+
+
+/* TEACHING (container) */
+.teaching {
+  background:#1e293b;
+  border-radius:8px;
+  padding:40px;
+  margin-bottom:40px;
+  box-shadow:0 4px 12px rgba(0,0,0,.4);
+  position:relative;
+}
+.teaching::before{
+  content:'';position:absolute;top:-10px;left:40px;width:40px;height:40px;
+  background:linear-gradient(135deg,#ff9900 0%,#2600E6 100%);
+  border-radius:6px;opacity:.9;
+}
+.teaching h3{color:#fff;font-size:32px;font-weight:700;margin-bottom:10px;letter-spacing:-.02em;}
+.teaching .section-sub{color:#94a3b8;margin-bottom:24px;}
+
+/* ONE GRID for all images */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:14px;
+}
+.gallery a{
+  display:block;border-radius:10px;overflow:hidden;
+  border:1px solid #334155;background:#0f172a;
+  box-shadow:0 4px 10px rgba(15,23,42,.35);
+  transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;
+}
+.gallery a:hover{
+  transform:translateY(-3px);
+  box-shadow:0 10px 22px rgba(255,153,0,.22);
+  border-color:#475569;
+}
+.gallery img{
+  width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;display:block;
+}
+
+
+/* LIGHTBOX */
+/* .lb-backdrop { position:fixed; inset:0; background:rgba(0,0,0,.8); display:none; align-items:center; justify-content:center; z-index:2000; padding:20px; } */
+/* .lb-content { max-width:min(1100px, 92vw); max-height:88vh; position:relative; } */
+/* .lb-content img { width:100%; height:auto; border-radius:10px; object-fit:contain; } */
+/* .lb-caption { color:#f8fafc; margin-top:8px; text-align:center; font-size:14px; } */
+/* .lb-close { */
+  /* position:absolute; top:-10px; right:-10px; width:36px; height:36px; border-radius:999px; */
+  /* background:#ff9900; color:#0f172a; border:none; font-weight:800; cursor:pointer; */
+  /* box-shadow:0 0 12px rgba(255,153,0,.6); */
+/* } */
+
+/* LIGHTBOX */
+.lb-backdrop{
+  position:fixed; inset:0;
+  background:rgba(0,0,0,.85);
+  display:none; align-items:center; justify-content:center;
+  z-index:2000; padding:20px;
+}
+
+/* Center the media */
+.lb-content{
+  position:relative;
+  display:flex; align-items:center; justify-content:center;
+  max-width:min(92vw,1100px);
+  max-height:85vh;
+}
+
+/* Consistent image size (keeps aspect, never overflows) */
+.lb-content img{
+  display:block;
+  width:auto; height:auto;
+  max-width:min(92vw,1100px);
+  max-height:80vh;
+  object-fit:contain;
+  border-radius:10px;
+  background:#000;     /* fills any letterbox area */
+}
+
+/* Caption */
+
+/* Proper close button (big & visible) */
+.lb-close{
+  position:absolute; top:-16px; right:-16px;
+  width:44px; height:44px; border-radius:999px;
+  background:#ff9900; color:#0f172a; border:none;
+  font-size:22px; font-weight:800; cursor:pointer;
+  display:flex; align-items:center; justify-content:center;
+  box-shadow:0 0 12px rgba(255,153,0,.6);
+}
+
+/* 🔧 Hide any stray/unintended buttons that render tiny */
+.lb-content button:not(.lb-close):not(.lb-prev):not(.lb-next){
+  display:none !important;
+}
+
+
+
+/* Lightbox navigation arrows */
+ .lb-nav-btn {
+     position: absolute;
+     top: 50%;
+     transform: translateY(-50%);
+     font-size: 80px;
+    /* keep arrow big */
+     font-weight: bold;
+     color: #ffffff;
+     background: none;
+    /* semi-transparent background */
+     border: none;
+     width: auto;
+    /* equal width */
+     height: auto;
+    /* equal height */
+     line-height: normal;
+    /* force vertical centering */
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     border-radius: 100%;
+    /* makes it a perfect circle */
+     cursor: pointer;
+     z-index: 2100;
+     transition: background 0.2s ease, transform 0.2s ease;
+}
+ .lb-nav-btn:hover {
+     color: #6855FF;  /* AWS orange arrow on hover */;
+    /* AWS orange glow on hover */
+     transform: translateY(-50%) scale(1.1);
+}
+ .lb-prev {
+     left: -80px;
+    /* adjust spacing outside the image */
+}
+ .lb-next {
+     right: -80px;
+    /* adjust spacing outside the image */
+}
+
+
+
+
+
+
