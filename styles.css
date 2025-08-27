@@ -359,6 +359,12 @@ main {
     text-align: center;
 }
 
+/* Contact form container and layout */
+.contact-form-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
 /* Form message styles for success/error notifications */
 .form-message.success {
     background: #fff7ed;
@@ -370,6 +376,10 @@ main {
     background: #fef2f2;
     color: #dc2626;
     border: 1px solid #fecaca;
+}
+
+.form-group {
+    margin-bottom: 24px;
 }
 
 /* Labels */
